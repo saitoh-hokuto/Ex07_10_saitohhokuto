@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#define _USE_MATH_DEFINES
+#include <math.h>
 using namespace std;
 
 /// <summary>
@@ -38,9 +40,34 @@ public:
 
 };
 
+class Cylinder :Solid {
+private:
+    double radius;
+    double height;
+
+public:
+    Cylinder(
+        double radius,
+        double height){
+        this->radius = radius;
+        this->height = height;
+    }
+    double GetVolume() {
+        return (radius*radius)*M_PI*height;
+    }
+    double GetSurface() {
+        return 2*M_PI*radius*(height+radius);
+    }
+
+
+};
+
 int main()
 {
     Box box{ 3,5,2.5 };
     cout << "boxの体積=" << box.GetVolume() << endl;
     cout << "boxの表面積=" << box.GetSurface() << endl;
+    Cylinder cylinder{ 2,2 };
+    cout << "cylinderの体積=" << cylinder.GetVolume() << endl;
+    cout << "cylinderの表面積=" << cylinder.GetSurface() << endl;
 }
