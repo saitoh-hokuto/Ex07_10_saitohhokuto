@@ -62,6 +62,47 @@ public:
 
 };
 
+class Cone :Solid {
+private:
+    double radius;
+    double height;
+
+public:
+    Cone(
+        double radius,
+        double height) {
+        this->radius = radius;
+        this->height = height;
+    }
+    double GetVolume() {
+        return (radius * radius) * M_PI * height;
+    }
+    double GetSurface() {
+        return 2 * M_PI * radius * (height + radius);
+    }
+
+
+};
+
+class Sphere :Solid {
+private:
+    double radius;
+
+public:
+    Sphere(
+        double radius,) {
+        this->radius = radius;
+        this->height = height;
+    }
+    double GetVolume() {
+        return (radius * radius) * M_PI * height;
+    }
+    double GetSurface() {
+        return 2 * M_PI * radius * (height + radius);
+    }
+
+
+};
 int main()
 {
     Box box{ 3,5,2.5 };
@@ -70,4 +111,10 @@ int main()
     Cylinder cylinder{ 2,2 };
     cout << "cylinderの体積=" << cylinder.GetVolume() << endl;
     cout << "cylinderの表面積=" << cylinder.GetSurface() << endl;
+    Cone cone{ 2,2 };
+    cout << "coneの体積=" << cone.GetVolume() << endl;
+    cout << "coneの表面積=" << cone.GetSurface() << endl;
+    Sphere sphere{ 2 };
+    cout << "sphereの体積=" << sphere.GetVolume() << endl;
+    cout << "sphereの表面積=" << sphere.GetSurface() << endl;
 }
