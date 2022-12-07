@@ -75,10 +75,11 @@ public:
         this->height = height;
     }
     double GetVolume() {
-        return (radius * radius) * M_PI * height;
+        return ((radius * radius) * M_PI)*height/3;
     }
     double GetSurface() {
-        return 2 * M_PI * radius * (height + radius);
+        float side = sqrt(height * height + radius * radius);
+        return M_PI*radius*(radius+side);
     }
 
 
@@ -90,15 +91,14 @@ private:
 
 public:
     Sphere(
-        double radius,) {
+        double radius) {
         this->radius = radius;
-        this->height = height;
     }
     double GetVolume() {
-        return (radius * radius) * M_PI * height;
+        return (4.0 / 3) * M_PI * radius * radius * radius;
     }
     double GetSurface() {
-        return 2 * M_PI * radius * (height + radius);
+        return 4 * M_PI * radius * radius;
     }
 
 
