@@ -3,18 +3,12 @@
 #include <math.h>
 using namespace std;
 
-/// <summary>
-/// 物体の定義
-/// </summary>
 class Solid {
 public:
     virtual double GetVolume() = 0;
     virtual double GetSurface() = 0;
 };
 
-/// <summary>
-/// 箱型
-/// </summary>
 class Box :Solid {
 private:
     double width;
@@ -23,9 +17,9 @@ private:
 
 public:
     Box(
-        double width,   //幅
-        double height,  //高さ
-        double depth) {//奥行
+        double width,
+        double height,
+        double depth) {
         this->width = width;
         this->height = height;
         this->depth = depth;
@@ -78,7 +72,7 @@ public:
         return ((radius * radius) * M_PI)*height/3;
     }
     double GetSurface() {
-        float side = sqrt(height * height + radius * radius);
+        double side = sqrt(height * height + radius * radius);
         return M_PI*radius*(radius+side);
     }
 
@@ -105,7 +99,7 @@ public:
 };
 int main()
 {
-    Box box{ 3,5,2.5 };
+    Box box{ 3.0,4.0,5.0 };
     cout << "boxの体積=" << box.GetVolume() << endl;
     cout << "boxの表面積=" << box.GetSurface() << endl;
     Cylinder cylinder{ 2,2 };
