@@ -67,7 +67,7 @@ public:
     double GetSurface() {
         return 2*M_PI*radius*(height+radius);
     }
-
+    
 
 };
 
@@ -118,7 +118,7 @@ public:
     double GetSurface() {
         return 4 * M_PI * radius * radius;
     }
-
+    
 
 };
 int main()
