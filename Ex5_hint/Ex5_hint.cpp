@@ -24,6 +24,15 @@ public:
         this->height = height;
         this->depth = depth;
     }
+    double GetWidth() {
+        return width;
+    }
+    double GetHeight() {
+        return height;
+    }
+    double GetDepth() {
+        return depth;
+    }
     double GetVolume() {
         return width * height * depth;
     }
@@ -45,6 +54,12 @@ public:
         double height){
         this->radius = radius;
         this->height = height;
+    }
+    double GetRadius() {
+        return radius;
+    }
+    double GetHeight() {
+        return height;
     }
     double GetVolume() {
         return (radius*radius)*M_PI*height;
@@ -68,6 +83,12 @@ public:
         this->radius = radius;
         this->height = height;
     }
+    double GetBottom() {
+        return bottom;
+    }
+    double GetHeight() {
+        return height;
+    }
     double GetVolume() {
         return ((radius * radius) * M_PI)*height/3;
     }
@@ -87,6 +108,9 @@ public:
     Sphere(
         double radius) {
         this->radius = radius;
+    }
+    double GetRadius() {
+        return radius;
     }
     double GetVolume() {
         return (4.0 / 3) * M_PI * radius * radius * radius;
