@@ -83,8 +83,8 @@ public:
         this->radius = radius;
         this->height = height;
     }
-    double GetBottom() {
-        return bottom;
+    double GetRadius() {
+        return radius;
     }
     double GetHeight() {
         return height;
